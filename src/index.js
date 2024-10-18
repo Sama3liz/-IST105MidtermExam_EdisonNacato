@@ -14,7 +14,7 @@ const firebaseConfig = {
   projectId: "ist105midtermexam-edisonnacato",
   storageBucket: "ist105midtermexam-edisonnacato.appspot.com",
   messagingSenderId: "601049774554",
-  appId: "1:601049774554:web:b45784801e2b4885e528e3"
+  appId: "1:601049774554:web:b45784801e2b4885e528e3",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
       loginWithEmailAndPassword(email, password)
         .then(() => {
-          window.location.href = "/culturalconnections.html";
+          window.location.href = "culturalconnections.html";
         })
         .catch((error) => {
           showModal("Error", `Error: ${error.message}`);
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("googleSignInBtn").addEventListener("click", () => {
       loginWithGoogle()
         .then(() => {
-          window.location.href = "/culturalconnections.html";
+          window.location.href = "culturalconnections.html";
         })
         .catch((error) => {
           showModal(
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("userEmail").textContent =
           user.email || "No email available";
       } else {
-        window.location.href = "/index.html";
+        window.location.href = "index.html";
       }
     });
 
     document.getElementById("logoutBtn").addEventListener("click", () => {
       logout()
         .then(() => {
-          window.location.href = "/index.html";
+          window.location.href = "index.html";
         })
         .catch((error) => {
           showModal("Error", `Error: ${error.message}`);
